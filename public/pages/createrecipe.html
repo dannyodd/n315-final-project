@@ -1,0 +1,28 @@
+<div class="createRecipeContent">
+    <form>
+        <h1 id="namedHeader">Hey "username", create your recipe!</h1>
+        <div class="recipeInfo">
+            <input id="rcpImg" type="text" placeholder="Add Recipe Image">
+            <div class="attachFileBtn">Attach File</div>
+            <input id="rcpName" type="text" placeholder="Recipe Name">
+            <input id="rcpDsc" type="text" placeholder="Recipe Description">
+            <input id="rcpTime" type="text" placeholder="Recipe Total Time">
+            <input id="rcpSrv" type="text" placeholder="Recipe Serving Size">
+        </div>
+        <div class="recipeIngredients" id="rcpIngr">
+            <h2>Enter Ingredients:</h2>
+            <input id="ingr1" type="text" placeholder="Ingredient #1">
+            <input id="ingr2" type="text" placeholder="Ingredient #2">
+            <input id="ingr3" type="text" placeholder="Ingredient #3">
+            <div class="newRowBtn" onclick="addIngredient()">+</div>
+        </div>
+        <div class="recipeInstructions" id="rcpInstr">
+            <h2>Enter Instructions:</h2>
+            <input id="instr1" type="text" placeholder="Instruction #1">
+            <input id="instr2" type="text" placeholder="Instruction #2">
+            <input id="instr3" type="text" placeholder="Instruction #3">
+            <div class="newRowBtn" onclick="addInstruction()">+</div>
+        </div>
+        <div class="submitRecipeBtn" id="submitRecipe" onclick="addRecipe()">Create Recipe</div>
+    </form>
+</div>

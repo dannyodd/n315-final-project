@@ -1,0 +1,10 @@
+.hidden {
+    display: none;
+}
+
+.recipeBtn {
+    @include site-btn;
+    @include text-styles(20px);
+    text-decoration: none;
+    letter-spacing: 2px;
+}

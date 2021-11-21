@@ -1,0 +1,1258 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin-bottom: 16px;
+}
+
+nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 40px 50px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navLogo {
+  width: 167px;
+  height: 55px;
+}
+.navLogo img {
+  width: 100%;
+  height: 100%;
+}
+
+.navHolder {
+  position: relative;
+}
+
+.navBars {
+  display: none;
+}
+
+.navBars .bar {
+  display: block;
+  width: 25px;
+  margin: 5px 0;
+  background-color: black;
+  height: 3px;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.navBars.active .bar:nth-child(2) {
+  opacity: 0;
+}
+.navBars.active .bar:nth-child(1) {
+  -webkit-transform: translateY(8px) rotate(45deg);
+          transform: translateY(8px) rotate(45deg);
+}
+.navBars.active .bar:nth-child(3) {
+  -webkit-transform: translateY(-8px) rotate(-45deg);
+          transform: translateY(-8px) rotate(-45deg);
+}
+
+.navLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin-left: -10px;
+  height: 80px;
+  width: 57vw;
+  overflow: hidden;
+  -webkit-transition: height 0s, opacity 0.4s ease-in;
+  transition: height 0s, opacity 0.4s ease-in;
+}
+.navLinks a {
+  font-family: "Caveat";
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  text-decoration: none;
+}
+
+.btnLogin {
+  width: 158px;
+  height: 52px;
+  background-color: #FFD972;
+  border-radius: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+  border: none;
+  cursor: pointer;
+  font-family: "Caveat";
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+
+@media only screen and (max-width: 960px) {
+  .navHolder {
+    position: fixed;
+    left: 89vw;
+    right: 0;
+  }
+
+  .navBars {
+    display: block;
+  }
+
+  .navLinks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 0;
+    width: 80vw;
+    opacity: 0;
+    position: absolute;
+    left: -80vw;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  .navLinks.active {
+    height: 80vh;
+    opacity: 1;
+  }
+}
+.hidden {
+  display: none;
+}
+
+.recipeBtn {
+  width: 128px;
+  height: 42px;
+  background-color: #FFD972;
+  border-radius: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+  border: none;
+  cursor: pointer;
+  font-family: "Caveat";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  text-decoration: none;
+  letter-spacing: 2px;
+}
+
+.homeContent {
+  min-height: 100vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(242, 92, 84, 0.5)), to(rgba(242, 92, 84, 0.5))), url(../images/hero.jpg);
+  background-image: linear-gradient(rgba(242, 92, 84, 0.5), rgba(242, 92, 84, 0.5)), url(../images/hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.homeBubbles {
+  position: relative;
+  width: 442px;
+  height: 402px;
+}
+
+.homeLgBubble {
+  width: 358px;
+  height: 358px;
+  background-color: #FFD972;
+  border-radius: 179px;
+  padding: 109px 96px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.homeLgBubble h1 {
+  font-family: "Caveat";
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+  letter-spacing: 1.5px;
+}
+.homeLgBubble p {
+  font-family: "Lato";
+  font-size: 13px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.homeSmBubble {
+  width: 168px;
+  height: 168px;
+  border-radius: 84px;
+  background-color: #FCBCB8;
+  padding: 65px 30px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  text-align: center;
+}
+.homeSmBubble p {
+  font-family: "Lato";
+  font-size: 10px;
+  font-weight: normal;
+  font-style: italic;
+  color: black;
+  letter-spacing: 1px;
+}
+
+@media only screen and (max-width: 960px) {
+  .homeBubbles {
+    width: 358px;
+    height: 454px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .homeBubbles {
+    height: 327px;
+    width: 258px;
+  }
+  .homeBubbles .homeLgBubble {
+    width: 258px;
+    height: 258px;
+    padding: 78px 70px;
+  }
+  .homeBubbles .homeLgBubble h1 {
+    font-size: 17px;
+  }
+  .homeBubbles .homeLgBubble p {
+    font-size: 9px;
+  }
+  .homeBubbles .homeSmBubble {
+    width: 121px;
+    height: 121px;
+    padding: 40px 18px;
+  }
+  .homeBubbles .homeSmBubble p {
+    font-size: 8px;
+  }
+}
+.browseContent {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(167, 232, 189, 0.5)), to(rgba(167, 232, 189, 0.5))), url(../images/browse/recipe-hero.jpg);
+  background-image: linear-gradient(rgba(167, 232, 189, 0.5), rgba(167, 232, 189, 0.5)), url(../images/browse/recipe-hero.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: 0% 90%;
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+.browseWrapper {
+  margin-left: 7%;
+  padding-top: 150px;
+}
+.browseWrapper h1 {
+  font-family: "Caveat";
+  font-size: 25px;
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+}
+
+.browseGallery {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.galleryItem {
+  width: 524px;
+  height: 263px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 50px;
+  margin-right: 50px;
+}
+
+.galleryImage {
+  width: 300px;
+  height: 263px;
+  border-radius: 24px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.galleryText {
+  width: 224px;
+  height: 263px;
+  border-radius: 24px;
+  background-color: white;
+  padding: 28px 45px;
+}
+.galleryText h2 {
+  font-family: "Lato Black";
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  border-bottom: 3px solid black;
+}
+.galleryText p {
+  font-family: "Lato";
+  font-size: 9px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+
+.galleryTextIconBlock {
+  width: 90px;
+  height: 25px;
+  margin: 15px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+}
+.galleryTextIconBlock p {
+  font-family: "Lato";
+  font-size: 10px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  padding-top: 5px;
+  margin-left: 15px;
+}
+.galleryTextIconBlock img {
+  width: 23px;
+  height: 24.5px;
+}
+
+@media only screen and (max-width: 960px) {
+  .browseWrapper {
+    width: 524px;
+    margin: 0 auto;
+  }
+
+  .browseGallery {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .browseWrapper {
+    width: 83vw;
+  }
+  .browseWrapper h1 {
+    max-width: 300px;
+    font-size: 19px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .galleryItem {
+    max-width: 300px;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .galleryImage {
+    width: 100%;
+    height: 149px;
+  }
+
+  .galleryText {
+    width: 100%;
+    height: auto;
+    padding-bottom: 8px;
+  }
+  .galleryText h2 {
+    font-size: 10px;
+    text-align: center;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 0 auto 15px auto;
+  }
+  .galleryText p {
+    font-size: 8px;
+  }
+
+  .yourrecipesItem {
+    max-width: 300px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+.yourrecipesItem {
+  margin-bottom: 30px;
+}
+
+.btnEditDeleteContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: -35px;
+  height: 42px;
+}
+
+div.galleryImage {
+  position: relative;
+}
+
+.viewBtn {
+  display: none;
+  position: absolute;
+  top: 40%;
+  left: 25%;
+}
+
+.btnEditDeleteContainer .recipeBtn {
+  display: none;
+}
+
+.galleryImage:hover .viewBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.yourrecipesItem:hover .btnEditDeleteContainer .recipeBtn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.btnEditDeleteContainer .recipeBtn {
+  margin-left: 10px;
+}
+
+@media screen and (max-width: 960px) {
+  .viewBtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 142px;
+    height: 38px;
+  }
+
+  .btnEditDeleteContainer {
+    width: 300px;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+
+  .btnEditDeleteContainer .recipeBtn {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-left: 0;
+    width: 142px;
+    height: 38px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .viewBtn, .btnEditDeleteContainer .recipeBtn {
+    font-size: 18px;
+  }
+
+  .viewBtn {
+    left: 28%;
+  }
+}
+.createRecipeContent {
+  width: 76.6%;
+  margin: 200px auto;
+}
+.createRecipeContent input[type=text] {
+  display: block;
+  width: 100%;
+  border-width: 0 0 3px 0;
+  border-color: black;
+  height: 25px;
+  margin-bottom: 80px;
+  font-family: "Lato Light";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.createRecipeContent input:focus {
+  outline: none;
+}
+.createRecipeContent input::-webkit-input-placeholder {
+  font-family: "Lato Light";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.createRecipeContent input::-moz-placeholder {
+  font-family: "Lato Light";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.createRecipeContent input:-ms-input-placeholder {
+  font-family: "Lato Light";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.createRecipeContent input::-ms-input-placeholder {
+  font-family: "Lato Light";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.createRecipeContent input::placeholder {
+  font-family: "Lato Light";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.createRecipeContent h1 {
+  font-family: "Caveat";
+  font-size: 25px;
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+  margin-bottom: 70px;
+}
+.createRecipeContent h2 {
+  font-family: "Lato Black";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  margin-bottom: 30px;
+}
+
+.submitRecipeBtn {
+  width: 422px;
+  height: 52px;
+  background-color: #EFA7A7;
+  border-radius: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+  border: none;
+  cursor: pointer;
+  font-family: "Caveat";
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  margin: 0 auto;
+}
+
+.recipeInfo, .recipeIngredients, .recipeInstructions {
+  position: relative;
+}
+
+.newRowBtn {
+  width: 38px;
+  height: 38px;
+  background-color: #EFA7A7;
+  border-radius: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+  border: none;
+  cursor: pointer;
+  font-family: "Gill Sans";
+  font-size: 20px;
+  font-weight: lighter;
+  font-style: normal;
+  color: black;
+  color: white;
+  position: absolute;
+  right: 0;
+  bottom: 5px;
+}
+
+.attachFileBtn {
+  width: 110px;
+  height: 36px;
+  background-color: #EFA7A7;
+  border-radius: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+  border: none;
+  cursor: pointer;
+  font-family: "Caveat";
+  font-size: 17px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  position: absolute;
+  right: 0;
+  top: -15px;
+}
+
+@media only screen and (max-width: 960px) {
+  .createRecipeContent input[type=text] {
+    font-family: "Lato Light";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input::-webkit-input-placeholder {
+    font-family: "Lato Light";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input::-moz-placeholder {
+    font-family: "Lato Light";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input:-ms-input-placeholder {
+    font-family: "Lato Light";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input::-ms-input-placeholder {
+    font-family: "Lato Light";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input::placeholder {
+    font-family: "Lato Light";
+    font-size: 16px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+
+  .submitRecipeBtn {
+    width: 354px;
+    height: 52px;
+    background-color: #EFA7A7;
+    border-radius: 26px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+            box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+    cursor: pointer;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .createRecipeContent h1 {
+    font-family: "Caveat";
+    font-size: 20px;
+    font-weight: bold;
+    font-style: normal;
+    color: black;
+    margin-bottom: 55px;
+  }
+  .createRecipeContent h2 {
+    margin-bottom: 45px;
+  }
+  .createRecipeContent input[type=text] {
+    font-family: "Lato Light";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+    margin-bottom: 45px;
+  }
+  .createRecipeContent input::-webkit-input-placeholder {
+    font-family: "Lato Light";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input::-moz-placeholder {
+    font-family: "Lato Light";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input:-ms-input-placeholder {
+    font-family: "Lato Light";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input::-ms-input-placeholder {
+    font-family: "Lato Light";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+  .createRecipeContent input::placeholder {
+    font-family: "Lato Light";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+
+  .submitRecipeBtn {
+    width: 283px;
+    height: 52px;
+    background-color: #EFA7A7;
+    border-radius: 26px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+            box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+    cursor: pointer;
+    font-family: "Caveat";
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+
+  .attachFileBtn {
+    width: 92px;
+    height: 33px;
+    background-color: #EFA7A7;
+    border-radius: 26px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+            box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+    border: none;
+    cursor: pointer;
+    font-family: "Caveat";
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    color: black;
+  }
+}
+.viewrecipe {
+  width: 75.6vw;
+  margin: 0 10.5vw 0 13.9vw;
+  padding-top: 300px;
+  padding-bottom: 200px;
+  letter-spacing: 2px;
+}
+.viewrecipe .editBtn {
+  margin-top: 60px;
+}
+.viewrecipe h2 {
+  font-family: "Lato Black";
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.viewrecipe p {
+  font-family: "Caveat";
+  font-size: 20px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.recipeHeadDesc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.recipeImgHead {
+  width: 468px;
+  height: 421px;
+  position: relative;
+}
+.recipeImgHead img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.recipeImgHead h2 {
+  position: absolute;
+  left: -110px;
+  bottom: 200px;
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+.recipeDesc {
+  max-width: 455px;
+  margin-left: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.recipeDesc h2 {
+  margin-bottom: 0;
+}
+
+.recipeIngr, .recipeInstr {
+  margin-top: 58px;
+}
+.recipeIngr h2, .recipeInstr h2 {
+  margin-bottom: 30px;
+}
+
+@media only screen and (max-width: 960px) {
+  .recipeHeadDesc {
+    display: block;
+  }
+
+  .recipeDesc {
+    margin-left: 0;
+    margin-top: 58px;
+  }
+  .recipeDesc h2 {
+    margin-bottom: 30px;
+  }
+  .recipeDesc p {
+    margin-bottom: 30px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  .viewrecipe h2 {
+    font-size: 20px;
+  }
+  .viewrecipe p {
+    font-size: 16px;
+  }
+
+  .recipeImgHead {
+    width: 251px;
+    height: 226px;
+  }
+  .recipeImgHead h2 {
+    bottom: 50px;
+    left: -70px;
+  }
+  .recipeImgHead img {
+    margin-left: 25px;
+  }
+}
+.loginContent {
+  background-color: #FFD972;
+  min-height: 100vh;
+}
+
+.loginFormsOuter {
+  padding: 200px 22.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.loginFormsOuter input[type=text], .loginFormsOuter input[type=email], .loginFormsOuter input[type=password] {
+  display: block;
+  width: 100%;
+  border-width: 0 0 3px 0;
+  border-color: black;
+  height: 25px;
+  margin-bottom: 50px;
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  background-color: #FFD972;
+}
+.loginFormsOuter input:focus {
+  outline: none;
+}
+.loginFormsOuter input::-webkit-input-placeholder {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.loginFormsOuter input::-moz-placeholder {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.loginFormsOuter input:-ms-input-placeholder {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.loginFormsOuter input::-ms-input-placeholder {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.loginFormsOuter input::placeholder {
+  font-family: "Lato Light";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+.loginFormsOuter h1 {
+  font-family: "Lato Black";
+  font-size: 30px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+  margin-bottom: 30px;
+}
+.loginFormsOuter h2 {
+  font-family: "Lato";
+  font-size: 12px;
+  font-weight: normal;
+  font-style: italic;
+  color: black;
+  margin-bottom: 0;
+}
+
+.loginForm__login {
+  width: 209px;
+}
+
+.loginForm__signup {
+  width: 250px;
+}
+
+#loginSubmit {
+  width: 209px;
+  height: 52px;
+  background-color: #FFD972;
+  border-radius: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+  border: none;
+  cursor: pointer;
+  font-family: "Caveat";
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+
+#signUpSubmit {
+  width: 250px;
+  height: 52px;
+  background-color: #FFD972;
+  border-radius: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+          box-shadow: 0 10px 6px rgba(0, 0, 0, 0.16);
+  border: none;
+  cursor: pointer;
+  font-family: "Caveat";
+  font-size: 25px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+
+.loginYes {
+  margin: 0 auto;
+  text-align: center;
+  letter-spacing: 1px;
+  background-color: rgba(255, 255, 255, 0.5);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 50px;
+  border-radius: 26px;
+}
+.loginYes h1 {
+  font-family: "Caveat";
+  font-size: 40px;
+  font-weight: bold;
+  font-style: normal;
+  color: black;
+  margin-bottom: 30px;
+}
+.loginYes p {
+  font-family: "Lato";
+  font-size: 30px;
+  font-weight: normal;
+  font-style: normal;
+  color: black;
+}
+
+@media only screen and (max-width: 960px) {
+  .loginFormsOuter {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    text-align: center;
+  }
+
+  .loginForm__login {
+    margin-bottom: 70px;
+  }
+}
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+  bottom: 45px;
+  left: 0;
+  right: 0;
+  margin: 0 40px;
+  letter-spacing: 1px;
+  font-family: "Lato";
+  font-size: 15px;
+  font-weight: normal;
+  font-style: italic;
+  color: black;
+}
+
+.footCopySM {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 19px;
+}
+
+.footLinks {
+  width: 55vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  left: 30%;
+}
+.footLinks a {
+  color: black;
+  text-decoration: none;
+}
+
+.smLinks {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 78px;
+}
+.smLinks img {
+  width: 19px;
+  height: 19px;
+}
+
+@media only screen and (max-width: 960px) {
+  footer {
+    margin: 0 20px;
+    font-size: 10px;
+  }
+
+  .smLinks {
+    width: 58px;
+  }
+
+  .footLinks {
+    width: 55.7vw;
+  }
+
+  .footCopySM p {
+    padding-top: 7px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  footer {
+    height: 67px;
+    bottom: 92px;
+  }
+
+  .footLinks {
+    width: 100%;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 0 20px;
+    left: 0;
+  }
+  .footLinks a {
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+
+  .footCopySM p {
+    padding-top: 4px;
+  }
+}

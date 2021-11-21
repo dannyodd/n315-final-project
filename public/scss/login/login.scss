@@ -1,0 +1,79 @@
+.loginContent {
+    background-color: #FFD972;
+    min-height: 100vh;
+}
+.loginFormsOuter {
+    padding: 200px 22.5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input[type=text], input[type=email], input[type=password] {
+        display: block;
+        width: 100%;
+        border-width: 0 0 3px 0;
+        border-color: black;
+        height: 25px;
+        margin-bottom: 50px;
+        @include text-styles(12px, 'Lato Light');
+        background-color: #FFD972;
+    }
+    input:focus {
+        outline: none;
+    }
+    input::placeholder {
+        @include text-styles(12px, 'Lato Light');
+    }
+    h1 {
+       @include text-styles(30px, 'Lato Black');
+       margin-bottom: 30px; 
+    }
+    h2 {
+        @include text-styles(12px, 'Lato', normal, italic);
+        margin-bottom: 0;
+    }
+}
+
+.loginForm__login {
+    width: 209px;
+}
+.loginForm__signup {
+    width: 250px;
+}
+
+#loginSubmit {
+    @include site-btn(209px, 52px);
+    @include text-styles;
+}
+
+#signUpSubmit {
+    @include site-btn(250px, 52px);
+    @include text-styles;
+}
+
+.loginYes {
+    margin: 0 auto;
+    text-align: center;
+    letter-spacing: 1px;
+    background-color: rgba(255,255,255, 0.5);
+    width: fit-content;
+    padding: 50px;
+    border-radius: 26px;
+    h1 {
+        @include text-styles(40px, 'Caveat', bold);
+        margin-bottom: 30px;
+    }
+    p {
+        @include text-styles(30px, 'Lato');
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    .loginFormsOuter {
+        flex-direction: column;
+        text-align: center;
+    }
+    .loginForm__login {
+        margin-bottom: 70px;
+    }
+}

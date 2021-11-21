@@ -1,0 +1,88 @@
+.homeContent {
+    min-height: 100vh;
+    background-image: linear-gradient(rgba(242,92,84,0.5), rgba(242,92,84,0.5)),
+        url(../images/hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeBubbles {
+    position: relative;
+    width: 442px;
+    height: 402px;
+}
+
+.homeLgBubble {
+    width: 358px;
+    height: 358px;
+    background-color: #FFD972;
+    border-radius: 179px;
+    padding: 109px 96px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    h1 {
+        @include text-styles(24px, 'Caveat', bold);
+        letter-spacing: 1.5px;
+    }
+    p {
+        @include text-styles(13px, 'Lato');
+        letter-spacing: 1px;
+        text-align: center;
+    }
+}
+
+.homeSmBubble {
+    width: 168px;
+    height: 168px;
+    border-radius: 84px;
+    background-color: #FCBCB8;
+    padding: 65px 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    text-align: center;
+    p {
+        @include text-styles(10px, 'Lato', normal, italic);
+        //width: 106px;
+        letter-spacing: 1px;
+    }
+}
+//Tablet media query
+@media only screen and (max-width: 960px){
+    .homeBubbles {
+        width: 358px;
+        height: 454px;
+    }
+}
+//Mobile media query
+@media only screen and (max-width: 600px){
+    .homeBubbles {
+        height: 327px;
+        width: 258px;
+        .homeLgBubble {
+            width: 258px;
+            height: 258px;
+            padding: 78px 70px;
+            h1 {
+                font-size: 17px;
+            }
+            p {
+                font-size: 9px;
+            }
+        }
+        .homeSmBubble {
+            width: 121px;
+            height: 121px;
+            padding: 40px 18px;
+            p {
+                font-size: 8px;
+            }
+        }
+    }
+
+}

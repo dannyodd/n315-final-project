@@ -1,0 +1,193 @@
+//Styles for Browse page
+.browseContent {
+    background-image: linear-gradient(rgba(167,232,189,0.5), rgba(167,232,189,0.5)),
+        url(../images/browse/recipe-hero.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 0% 90%;
+    min-height: 100vh;
+    padding-bottom: 100px;
+}
+.browseWrapper {
+    //width: 86%;
+    // margin: 0 auto;
+    margin-left: 7%;
+    padding-top: 150px;
+    h1 {
+        @include text-styles(25px, 'Caveat', bold);
+    }
+}
+.browseGallery {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0;
+}
+
+.galleryItem {
+    width: 524px;
+    height: 263px;
+    display: flex;
+    margin-bottom: 50px;
+    margin-right: 50px;
+}
+
+.galleryImage {
+    width: 300px;
+    height: 263px;
+    border-radius: 24px;
+    object-fit: cover;
+}
+
+.galleryText {
+    width: 224px;
+    height: 263px;
+    border-radius: 24px;
+    background-color: white;
+    padding: 28px 45px;
+    h2 {
+        @include text-styles(15px, 'Lato Black');
+        border-bottom: 3px solid black;
+    }
+
+    p {
+       @include text-styles(9px, 'Lato'); 
+    }
+}
+
+.galleryTextIconBlock {
+    width: 90px;
+    height: 25px;
+    margin: 15px auto;
+    display: flex;
+    justify-content: left;
+    p {
+        @include text-styles(10px, 'Lato');
+        padding-top: 5px;
+        margin-left: 15px;
+    }
+    img {
+        width: 23px;
+        height: 24.5px;
+    }
+}
+
+//Tablet media query for "Browse" page (also applies to "Your Recipes")
+@media only screen and (max-width: 960px){
+    .browseWrapper {
+        width: 524px;
+        margin: 0 auto;
+    }
+    .browseGallery {
+        flex-wrap: nowrap;
+        flex-direction: column;
+    }
+}
+//Mobile media query for "Browse" page (also applies to "Your Recipes")
+@media only screen and (max-width: 600px){
+    .browseWrapper {
+        width: 83vw;
+        h1 {
+            max-width: 300px;
+            font-size: 19px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .galleryItem {
+        max-width: 300px;
+        height: fit-content;
+        flex-direction: column;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .galleryImage {
+        width: 100%;
+        height: 149px;
+    }
+    .galleryText {
+        width: 100%;
+        height: auto;
+        padding-bottom: 8px;
+        h2 {
+            font-size: 10px;
+            text-align: center;
+            width: fit-content;
+            margin: 0 auto 15px auto;
+        }
+        p {
+            font-size: 8px;
+        }
+    }
+    .yourrecipesItem {
+        max-width: 300px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+//Begin styles for "Your Recipes" page (variant of Browse page)
+
+.yourrecipesItem{
+    margin-bottom: 30px;
+}
+
+.btnEditDeleteContainer {
+    display: flex;
+    margin-top: -35px;
+    height: 42px;
+}
+div.galleryImage {
+    position: relative;
+}
+.viewBtn {
+    display: none;
+    position: absolute;
+    top: 40%;
+    left: 25%;
+}
+.btnEditDeleteContainer .recipeBtn {
+    display: none;
+}
+
+.galleryImage:hover .viewBtn {
+    display: flex;
+}
+
+.yourrecipesItem:hover .btnEditDeleteContainer .recipeBtn {
+    display: flex;
+}
+
+.btnEditDeleteContainer .recipeBtn {
+    margin-left: 10px;
+}
+
+//Tablet media query for "Your Recipes" page
+@media screen and (max-width: 960px) {
+    .viewBtn {
+        display: flex;
+        width: 142px;
+        height: 38px;
+    }
+    .btnEditDeleteContainer {
+        width: 300px;
+        justify-content: space-between;
+    }
+    .btnEditDeleteContainer .recipeBtn {
+        display: flex;
+        margin-left: 0;
+        width: 142px;
+        height: 38px;
+    }
+}
+
+//Mobile media query for "Your Recipes" page
+@media screen and (max-width: 600px) {
+    .viewBtn, .btnEditDeleteContainer .recipeBtn {
+        font-size: 18px;
+    }
+    .viewBtn {
+        left: 28%;
+    }
+}

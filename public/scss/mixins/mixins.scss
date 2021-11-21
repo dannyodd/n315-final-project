@@ -1,0 +1,21 @@
+@mixin text-styles($size: 25px, $font: 'Caveat', $weight: normal, $style: normal) {
+    font-family: $font;
+    font-size: $size;
+    font-weight: $weight;
+    font-style: $style;
+    color: black;
+}
+
+
+@mixin site-btn($width: 128px, $height: 42px, $color: #FFD972) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    border-radius: 26px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 6px rgba(0,0,0,0.16);
+    border: none;
+    cursor: pointer;
+}

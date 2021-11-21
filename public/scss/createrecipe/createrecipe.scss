@@ -1,0 +1,93 @@
+.createRecipeContent {
+    width: 76.6%;
+    margin: 200px auto;
+    input[type=text] {
+        display: block;
+        width: 100%;
+        border-width: 0 0 3px 0;
+        border-color: black;
+        height: 25px;
+        margin-bottom: 80px;
+        @include text-styles(20px, 'Lato Light');
+    }
+    input:focus {
+        outline: none;
+    }
+    input::placeholder {
+        @include text-styles(20px, 'Lato Light');
+    }
+    h1 {
+       @include text-styles(25px, 'Caveat', bold);
+       margin-bottom: 70px; 
+    }
+    h2 {
+        @include text-styles(20px, 'Lato Black');
+        margin-bottom: 30px;
+    }
+}
+
+.submitRecipeBtn {
+    @include site-btn(422px, 52px, #EFA7A7);
+    @include text-styles;
+    margin: 0 auto;
+}
+.recipeInfo, .recipeIngredients, .recipeInstructions {
+    position: relative;
+}
+.newRowBtn {
+    @include site-btn(38px, 38px, #EFA7A7);
+    @include text-styles(20px, 'Gill Sans', lighter);
+    color: white;
+    position: absolute;
+    right: 0;
+    bottom: 5px;
+}
+.attachFileBtn {
+    @include site-btn(110px, 36px, #EFA7A7);
+    @include text-styles(17px);
+    position: absolute;
+    right: 0;
+    top: -15px;
+}
+
+//Tablet media query
+@media only screen and (max-width: 960px){
+    .createRecipeContent {
+        input[type=text] {
+            @include text-styles(16px, 'Lato Light');
+        }
+        input::placeholder {
+            @include text-styles(16px, 'Lato Light');
+        }
+    }
+    .submitRecipeBtn {
+        @include site-btn(354px, 52px, #EFA7A7);
+    }
+}
+//Mobile media query
+@media only screen and (max-width: 600px){
+    .createRecipeContent {
+        h1 {
+            @include text-styles(20px, 'Caveat', bold);
+            margin-bottom: 55px;
+        }
+        h2 {
+            margin-bottom: 45px;
+        }
+        input[type=text] {
+            @include text-styles(12px, 'Lato Light');
+            margin-bottom: 45px;
+        }
+        input::placeholder {
+            @include text-styles(12px, 'Lato Light');
+        }
+    }
+    .submitRecipeBtn {
+        @include site-btn(283px, 52px, #EFA7A7);
+        @include text-styles(20px);
+    }
+    .attachFileBtn {
+        @include site-btn(92px, 33px, #EFA7A7);
+        @include text-styles(12px);
+    }
+}

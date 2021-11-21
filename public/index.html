@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Daniel Todd | N315 Final Project</title>
+  </head>
+  <body>
+    <nav>
+      <div class="navLogo">
+          <img src="images/logo.svg" alt="logo">
+      </div>
+      <div class="navHolder">
+          <div class="navBars">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+          </div>
+          <div class="navLinks">
+              <a id="home" href="#home">Home</a>
+              <a id="browse" href="#browse">Browse</a>
+              <a id="createrecipe" href="#createrecipe" class="hidden">Create Recipe</a>
+              <a id="yourrecipes" href="#yourrecipes" class="hidden">Your Recipes</a>
+              <div id="loginBtn" class="btnLogin">
+                  <a id="login" href="#login">Login</a>
+              </div>
+              <div id="logoutBtn" class="btnLogin hidden" onclick="signOut()">
+                  Logout
+              </div>     
+          </div>
+      </div>
+    </nav>
+    <div id="app"> <!-- Begin App div-->
+    </div> <!-- End App div-->
+    <footer>
+        <div class="footCopySM">
+            <p>Copyright © 2019 The Jungle Cook</p>
+            <div class="smLinks">
+                <a href="#">
+                    <img src="images/facebook.svg" alt="facebook">
+                </a>
+                <a href="#">
+                    <img src="images/instagram.svg" alt="instagram">
+                </a>     
+            </div>
+        </div>
+        <div class="footLinks">
+            <a href="#" class="foot__logoutOnly">Login</a>
+            <a href="#" class="foot__loginOnly hidden">Logout</a>
+            <a href="#">Recipes by Category</a>
+            <a href="#">Privacy and Copyright</a>
+            <a href="#" class="foot__loginOnly hidden">Create Recipe</a>
+            <a href="#" class="foot__loginOnly hidden">Your Recipes</a>
+        </div>
+    </footer>
+      <!-- update the version number as needed -->
+      <script defer src="/__/firebase/9.4.1/firebase-app-compat.js"></script>
+      <!-- include only the Firebase features as you need -->
+      <script defer src="/__/firebase/9.4.1/firebase-auth-compat.js"></script>
+      <script defer src="/__/firebase/9.4.1/firebase-database-compat.js"></script>
+      <script defer src="/__/firebase/9.4.1/firebase-firestore-compat.js"></script>
+      <script defer src="/__/firebase/9.4.1/firebase-functions-compat.js"></script>
+      <script defer src="/__/firebase/9.4.1/firebase-messaging-compat.js"></script>
+      <script defer src="/__/firebase/9.4.1/firebase-storage-compat.js"></script>
+      <script defer src="/__/firebase/9.4.1/firebase-analytics-compat.js"></script>
+      <script defer src="/__/firebase/9.4.1/firebase-remote-config-compat.js"></script>
+      <script defer src="/__/firebase/9.4.1/firebase-performance-compat.js"></script>
+      <!-- 
+        initialize the SDK after all desired features are loaded, set useEmulator to false
+        to avoid connecting the SDK to running emulators.
+      -->
+      <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+
+      <!-- jQuery, Model and App scripts + SweetAlert2 -->
+      <script src="lib/jquery-3.6.0.min.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+      <!-- <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script> -->
+      <script src="model/model.js"></script>
+      <script src="app/app.js"></script>
+  </body>
+</html>
